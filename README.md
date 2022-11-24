@@ -63,11 +63,20 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  1. Opened the network debug tab on the frontend and previewes the error i.e 500 Internal Server Error.
+  2. Opened my Rails server log and looked for the last request that came through i.e NameError (uninitialized constant ToysController::Toys).
+  3. The error was a typo i.e Toys instead of Toy.
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  1. Checked my browsers console and the error was Unexpected end of JSON input.
+  2. I checked my fetch request first.
+  3. I then checked the controller action and made sure to render JSON.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  1. I checked the network tab on the frontend.
+  2. I then checked the rails server logs in the backenf for the last request that came through.
+  3. I then added a new route to handle the DELETE request and the path for the request. 
